@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://notopened.com/sitemap.xml
+#DaumWebMasterTool:9bf5cb41fc2ff83bb0332e104c6ed213f0d54db7c8ec933935e15ea7ffed6d40:bBY3xhlFAprgQb834vQqzA==
