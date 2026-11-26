@@ -31,6 +31,7 @@
     "sameAs": ["https://www.youtube.com/@notopened"]
   }
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8827877441685174" crossorigin="anonymous"></script>
   <style>
     :root {
       --bg: #0b1220;
@@ -126,7 +127,9 @@
     .dream-btn:focus-visible,
     .side-link:focus-visible,
     .mini-card:focus-visible,
-    .foot-link:focus-visible {
+    .foot-link:focus-visible,
+    .intro a:focus-visible,
+    .legal-links a:focus-visible {
       outline: 2px solid var(--gold);
       outline-offset: 3px;
     }
@@ -188,6 +191,33 @@
       text-decoration: none;
     }
     .foot-link:hover { color: #fff; }
+    .intro {
+      margin-bottom: 28px;
+    }
+    .intro p {
+      font-size: 0.94rem;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+    .intro p:last-child { margin-bottom: 0; }
+    .intro a {
+      color: var(--warm);
+      font-weight: 650;
+    }
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 18px;
+    }
+    .legal-links a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .legal-links a:hover { color: #fff; }
     @media (max-width: 400px) {
       .pair { grid-template-columns: 1fr; }
       .mini-card { min-height: 108px; }
@@ -295,9 +325,21 @@
       </a>
     </section>
 
+    <section class="intro" aria-label="사이트 안내">
+      <p>notopened(낫오픈드)는 회원가입 없이 브라우저에서 바로 여는 가벼운 웹 놀이 모음입니다. 어젯밤 꿈의 한 장면, 오늘의 운세, 짧은 상식 퀴즈, 바둑·체스·장기 한 수를 같은 자리에서 고릅니다.</p>
+      <p>꿈풀이는 기억에 남는 장면으로 시작하고, 사주와 MBTI 궁합은 운세 페이지에서 이어집니다. 상식 퀴즈는 다섯 문제이고, 바둑·체스·장기는 지금 판의 한 수입니다. 홈의 버튼이나 카드를 누르면 그 놀이로 이동합니다.</p>
+      <p>결과와 해설은 재미와 참고를 위한 것입니다. 각 놀이를 어떻게 쓰는지, 내용을 언제 고치는지는 <a href="/about/">소개</a>에 적어 두었습니다.</p>
+    </section>
+
     <nav class="foot-links" aria-label="채널">
       <a class="foot-link" href="https://www.youtube.com/@notopened" target="_blank" rel="noopener noreferrer">유튜브 보기</a>
       <a class="foot-link" href="https://blog.naver.com/penta309" target="_blank" rel="noopener noreferrer">블로그 읽기</a>
+    </nav>
+    <nav class="legal-links" aria-label="안내">
+      <a href="/about/">소개</a>
+      <a href="/privacy/">개인정보처리방침</a>
+      <a href="/terms/">이용약관</a>
+      <a href="/contact/">문의</a>
     </nav>
   </div>
 </body>
