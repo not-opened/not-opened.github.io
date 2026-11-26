@@ -8,7 +8,7 @@
 - 사주: `/fortune/`
 - MBTI 궁합: `/fortune/?tab=mbti`
 - 상식 퀴즈: `/quiz/`
-- 바둑·체스 한 수: `/go-chess/`
+- 바둑·체스·장기 한 수: `/go-chess/`
 - 유튜브: [youtube.com/@notopened](https://www.youtube.com/@notopened)
 - 블로그: [blog.naver.com/penta309](https://blog.naver.com/penta309)
 
