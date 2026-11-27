@@ -91,6 +91,20 @@
       font-size: 0.95rem;
       color: var(--muted);
     }
+    .updated {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--muted);
+    }
+    .updated-when { white-space: nowrap; }
+    .updated time {
+      font-variant-numeric: tabular-nums;
+      font-weight: 650;
+      color: #cbd5e1;
+    }
     .art {
       margin: 0 0 16px;
       border-radius: 18px;
@@ -238,6 +252,7 @@
       <div class="title-block">
         <h1>어젯밤, 무슨 꿈을 꿨나요?</h1>
         <p class="lede">기억에 남는 장면으로 내 꿈을 풀어보세요.</p>
+        <p class="updated">매일 업데이트 · <span class="updated-when">마지막 업데이트 <time id="last-updated" datetime="2026-11-27">2026.11.27</time></span></p>
       </div>
     </header>
 
@@ -342,5 +357,80 @@
       <a href="/contact/">문의</a>
     </nav>
   </div>
+  <script>
+    (function () {
+      var el = document.getElementById("last-updated");
+      if (!el || !window.fetch || !window.Promise) return;
+
+      var repos = [
+        "not-opened/fortune",
+        "not-opened/quiz",
+        "not-opened/go-chess",
+        "not-opened/not-opened.github.io"
+      ];
+
+      function seoulStamp(iso) {
+        try {
+          var ms = Date.parse(iso);
+          if (!isFinite(ms)) return null;
+          var parts = new Intl.DateTimeFormat("en-US", {
+            timeZone: "Asia/Seoul",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+          }).formatToParts(new Date(ms));
+          var year = "";
+          var month = "";
+          var day = "";
+          for (var i = 0; i < parts.length; i++) {
+            if (parts[i].type === "year") year = parts[i].value;
+            else if (parts[i].type === "month") month = parts[i].value;
+            else if (parts[i].type === "day") day = parts[i].value;
+          }
+          if (!year || !month || !day) return null;
+          return { text: year + "." + month + "." + day, datetime: year + "-" + month + "-" + day };
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function latestCommit(repo) {
+        var init = {};
+        if (window.AbortSignal && typeof AbortSignal.timeout === "function") {
+          init.signal = AbortSignal.timeout(8000);
+        }
+        return fetch("https://api.github.com/repos/" + repo + "/commits?per_page=1", init)
+          .then(function (res) {
+            if (!res.ok) return null;
+            return res.json();
+          })
+          .then(function (data) {
+            if (!data || !data.length || !data[0].commit) return null;
+            var commit = data[0].commit;
+            var committer = commit.committer && commit.committer.date;
+            var author = commit.author && commit.author.date;
+            return committer || author || null;
+          })
+          .catch(function () { return null; });
+      }
+
+      Promise.all(repos.map(latestCommit)).then(function (dates) {
+        var best = null;
+        var bestMs = -Infinity;
+        for (var i = 0; i < dates.length; i++) {
+          var ms = Date.parse(dates[i]);
+          if (!isFinite(ms) || ms <= bestMs) continue;
+          bestMs = ms;
+          best = dates[i];
+        }
+        var stamp = best && seoulStamp(best);
+        if (!stamp) return;
+        var fallbackMs = Date.parse(el.getAttribute("datetime") + "T00:00:00+09:00");
+        if (isFinite(fallbackMs) && bestMs < fallbackMs) return;
+        el.textContent = stamp.text;
+        el.setAttribute("datetime", stamp.datetime);
+      }).catch(function () {});
+    })();
+  </script>
 </body>
 </html>
