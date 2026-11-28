@@ -1,0 +1,4 @@
+.daily-banner{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 15px;background:var(--green);color:var(--white);font-size:.9rem;padding:11px 15px;border-radius:13px;margin-bottom:13px}
+.daily-banner strong{display:block}.daily-banner span{color:#f5d183}.daily-sources{display:flex;gap:5px 15px;flex-wrap:wrap;font-size:.9rem}
+.daily-share-url{font:inherit;width:100%;border:1px solid var(--line);padding:8px;border-radius:8px;margin:0 0 12px}.daily-note{margin-top:18px}
+#round .choices{grid-template-columns:1fr}#round .eyebrow{color:var(--muted);margin-top:4px}
