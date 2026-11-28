@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guess Where in Korea: Gyeongju Photo Quiz | notopened</title>
-<meta name="description" content="Can you recognize three historic places in Gyeongju, Korea? Take a free photo quiz and send a friend the same challenge.">
+<title>Guess Where in Korea: 12 Landmark Photos | notopened</title>
+<meta name="description" content="Guess 12 Korean landmarks in three regional photo quizzes, and send friends the exact same challenge.">
 <link rel="canonical" href="https://notopened.com/en/guess-korea/">
-<meta property="og:type" content="website"><meta property="og:title" content="Guess Where in Korea: Gyeongju Photo Quiz"><meta property="og:description" content="Three photos from a city full of Silla history. Can you guess the places?"><meta property="og:url" content="https://notopened.com/en/guess-korea/"><meta property="og:image" content="https://notopened.com/en/assets/observatory.webp">
+<meta property="og:type" content="website"><meta property="og:title" content="Guess Where in Korea: 12 Landmark Photos"><meta property="og:description" content="Pick a regional photo challenge in Gyeongju, Seoul or across Korea."><meta property="og:url" content="https://notopened.com/en/guess-korea/"><meta property="og:image" content="https://notopened.com/en/assets/observatory.webp">
 <link rel="stylesheet" href="../assets/site.css"><script defer src="./quiz.js"></script>
 </head>
 <body>
 <header class="bar narrow"><a class="brand" href="../"><span class="mark" aria-hidden="true">▶</span>notopened</a><a class="lang" href="/quiz/places/" lang="ko">한국어 퀴즈</a></header>
 <main class="narrow">
 <a class="back" href="../">← English home</a>
-<h1 class="page-title">Guess Where in Korea</h1><p class="lede">Gyeongju edition. Three real photos, three historic places. Can you name them all?</p>
+<h1 class="page-title">Guess Where in Korea</h1><p class="lede">Pick a route. Guess the landmark, then see its Korean name, the story behind the photo and where to find it.</p>
+<nav class="tabs" aria-label="Choose a photo quiz"><a data-pack="gyeongju" href="?region=gyeongju">Gyeongju <span>3</span></a><a data-pack="seoul" href="?region=seoul">Seoul <span>5</span></a><a data-pack="beyond" href="?region=beyond">Beyond Seoul <span>4</span></a><a data-pack="all" href="?region=all">All photos <span>12</span></a></nav>
+<p class="eyebrow" id="edition"></p>
 <noscript><p>Turn on JavaScript to play. You can still <a href="https://ktrip-notes.blogspot.com/2026/11/gyeongju-in-2-days-easy-autumn.html">read the Gyeongju guide</a>.</p></noscript>
 <section class="quiz-panel" id="quiz" hidden aria-labelledby="question">
 <div class="progress"><span id="progress"></span><div class="meter" aria-hidden="true"><span id="bar"></span></div></div>
 <img class="quiz-photo" id="photo" alt="">
 <h2 id="question" tabindex="-1"></h2>
 <div class="choices" id="choices"></div>
-<div class="reveal" id="reveal" hidden><p><strong id="verdict"></strong></p><p id="detail"></p><a id="map" href="">View on map</a> · <a id="credit" href="">Photo credit</a></div>
+<div class="reveal" id="reveal" hidden><p><strong id="verdict"></strong></p><p id="detail"></p><a id="map" href="">View on map</a> · <a id="credit" href="">Photo credit</a> · <a id="license" href="">License</a></div>
 <p id="feedback" class="sr" role="status"></p>
 <div class="actions"><button id="next" class="button" type="button" hidden>Next photo</button></div>
 </section>
 <section class="quiz-panel" id="results" hidden aria-labelledby="result-title">
 <h2 id="result-title" tabindex="-1">Your Gyeongju score</h2><p id="score" class="score"></p>
 <ul id="summary" class="summary"></ul>
-<div class="reveal"><strong>Going to Gyeongju?</strong><br><a href="https://ktrip-notes.blogspot.com/2026/11/gyeongju-in-2-days-easy-autumn.html">Read the two-day itinerary on K-Trip Notes →</a></div>
+<div class="reveal"><strong>Plan the real trip</strong><br><a id="trip-link" href="../travel/">Find a K-Trip Notes guide →</a></div>
 <div class="actions"><button class="button" id="share" type="button">Challenge a friend</button><button class="button ghost" id="reset" type="button">Play again</button></div>
 <p id="sharing" class="status" role="status"></p><input id="share-url" type="url" aria-label="Challenge link" style="width:100%" readonly hidden>
 </section>

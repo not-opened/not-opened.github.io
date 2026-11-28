@@ -15,7 +15,19 @@ const lessons=[
  {name:'The general (궁)',task:'The general is at the lower palace center. Follow a marked diagonal without leaving the palace.',actor:[4,8,'궁','General'],pieces:[],choices:[
   {x:4,y:7,tip:'That one-step move is legal, but it is straight, not along a diagonal.'},
   {x:3,y:7,ok:true,tip:'The corner is connected to the center by the marked diagonal. The general stays inside its palace.'},
-  {x:2,y:8,tip:'The general cannot leave the palace or move two points at once.'}]}
+  {x:2,y:8,tip:'The general cannot leave the palace or move two points at once.'}]},
+ {name:'The elephant (상)',task:'The elephant takes one straight step, then two diagonal steps in the same direction. Choose a route with both intermediate points clear.',actor:[4,6,'상','Elephant'],pieces:[[4,5,'병','Green soldier'],[2,5,'卒','Red soldier',true]],choices:[
+  {x:2,y:3,tip:'The first straight step upward is blocked by the green soldier.'},
+  {x:1,y:4,tip:'The second intermediate point to the left is occupied by a red soldier.'},
+  {x:7,y:4,ok:true,tip:'One step right, then two diagonally up-right. Both intermediate points are clear.'}]},
+ {name:'The guard (사)',task:'The green guard is at a palace corner. Take one diagonal step along a marked line.',actor:[3,9,'사','Guard'],pieces:[[4,7,'궁','Green general']],choices:[
+  {x:4,y:8,ok:true,tip:'The marked line joins the corner to the palace center. A guard can travel one point along it.'},
+  {x:3,y:8,tip:'This straight move stays in the palace, but the exercise asks for a diagonal.'},
+  {x:2,y:8,tip:'This point is outside the palace. The guard must stay inside.'}]},
+ {name:'The soldier (병)',task:'The green side moves toward the top. Find a legal sideways move for this soldier.',actor:[4,5,'병','Soldier'],pieces:[],choices:[
+  {x:4,y:6,tip:'A soldier cannot retreat. For green, toward the bottom is backward.'},
+  {x:5,y:5,ok:true,tip:'One point sideways is legal. Unlike a western chess pawn, a Janggi soldier can move left or right.'},
+  {x:5,y:4,tip:'A soldier cannot take this diagonal on the open board. Some forward diagonals are allowed along marked palace lines.'}]}
 ];
 const by=id=>document.getElementById(id);
 const letters='ABC';
