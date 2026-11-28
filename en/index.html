@@ -7,6 +7,14 @@
 <link rel="canonical" href="https://notopened.com/en/">
 <meta property="og:type" content="website"><meta property="og:title" content="Explore Korea by Playing | notopened"><meta property="og:description" content="Guess real Korean landmarks and learn your first moves in Korean chess."><meta property="og:url" content="https://notopened.com/en/"><meta property="og:image" content="https://notopened.com/en/assets/wolji.webp">
 <link rel="stylesheet" href="./assets/site.css">
+<style id="notopened-responsive-ui">/* Make language switching and hero actions easier to tap on narrow screens. */
+.bar .lang{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:480px){
+  main>.hero h1{font-size:clamp(1.95rem,8vw,2.45rem)}
+  main>.hero .button{width:100%;text-align:center;justify-content:center}
+  main>.hero .lede{line-height:1.5}
+}
+</style>
 </head>
 <body>
 <header class="bar wrap"><a class="brand" href="./"><span class="mark" aria-hidden="true">▶</span>notopened</a><a class="lang" href="/" lang="ko" hreflang="ko">한국어</a></header>

@@ -238,6 +238,29 @@
       h1 { font-size: 1.46rem; }
     }
   </style>
+<style id="notopened-responsive-ui">/* Keep the main action above the illustration on small screens. */
+.wrap{display:grid;grid-template-columns:minmax(0,1fr);max-width:520px}
+.wrap>header{grid-row:1}
+.dream-card{grid-row:2;margin:0 0 10px;padding:0;background:none;border:0;box-shadow:none}
+.side-links{grid-row:3;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 14px}
+.side-link{display:grid;place-items:center;text-align:center;min-height:44px;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--card);line-height:1.35;word-break:keep-all}
+.art{grid-row:4;aspect-ratio:auto;height:clamp(112px,34vw,166px)}
+.brand a[lang=en]{display:inline-flex;align-items:center;min-height:44px}
+.pair{margin-bottom:22px}
+.mini-card h2{margin-bottom:8px;word-break:keep-all}
+@media(max-width:400px){.mini-card{min-height:82px;padding:12px 14px}.brand{margin-bottom:14px}.title-block{margin-bottom:12px}}
+@media(min-width:680px){
+  .wrap{max-width:960px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px;align-items:start}
+  .wrap>header,.dream-card,.side-links{grid-column:1}
+  .art{grid-column:2;grid-row:1/4;align-self:stretch;height:auto;min-height:220px;margin-bottom:14px}
+  .art svg{position:absolute;inset:0}
+  .art{position:relative}
+  .pair,.intro,.foot-links,.legal-links{grid-column:1/-1}
+  .intro{max-width:68ch}
+  .title-block h1{font-size:clamp(1.8rem,3vw,2.45rem);word-break:keep-all}
+  .mini-card{min-height:102px}
+}
+</style>
 </head>
 <body>
   <div class="wrap">
