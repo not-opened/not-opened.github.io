@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Korea Quiz: Five Questions a Day | notopened</title>
+<meta name="description" content="Take a free five-question quiz about Korea every day: one landmark photo, plus food, travel, language and culture. Share the same set with a friend.">
+<link rel="canonical" href="https://notopened.com/en/daily/">
+<meta property="og:type" content="website"><meta property="og:title" content="Daily Korea Quiz"><meta property="og:description" content="Five quick questions: one photo, plus food, travel, language and culture."><meta property="og:url" content="https://notopened.com/en/daily/">
+<link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="./daily.css"><script defer src="./bank.js"></script><script defer src="./daily.js"></script>
+</head>
+<body>
+<header class="bar narrow"><a class="brand" href="../"><span class="mark" aria-hidden="true">▶</span>notopened</a><a href="/quiz/" class="lang" lang="ko">한국어 퀴즈</a></header>
+<main class="narrow">
+<a class="back" href="../">← English home</a>
+<p class="eyebrow">A five-question daily challenge</p>
+<h1 class="page-title">Daily Korea Quiz</h1>
+<p class="lede">One landmark photo, then four questions on food, travel, everyday Korean and culture. An explanation follows each answer.</p>
+<noscript><p>This quiz needs JavaScript. You can still <a href="../travel/">browse the travel guides</a>.</p></noscript>
+<div class="daily-banner" id="banner" hidden><div><strong id="day"></strong><span id="streak"></span></div><a id="today" href="./" hidden>Play today’s quiz</a></div>
+<section class="quiz-panel" id="round" aria-labelledby="question" hidden>
+<div class="progress"><span id="count"></span><div class="meter" aria-hidden="true"><span id="meter"></span></div></div>
+<p class="eyebrow" id="category"></p><img class="quiz-photo" id="image" alt="" hidden>
+<h2 id="question" tabindex="-1"></h2>
+<div class="choices" id="choices"></div>
+<div class="reveal" id="reveal" hidden><p><strong id="verdict"></strong></p><p id="explanation"></p><div class="daily-sources"><a id="reference" href="">Learn more</a><a id="image-license" href="" hidden>Photo license</a></div></div>
+<p id="feedback" class="sr" role="status"></p>
+<div class="actions"><button class="button" type="button" id="next" hidden>Next question</button></div>
+</section>
+<section class="quiz-panel" id="results" aria-labelledby="result-title" hidden>
+<h2 id="result-title" tabindex="-1">Your Daily Korea score</h2><p class="score" id="score"></p><ul id="breakdown" class="summary"></ul>
+<div class="actions"><button class="button" type="button" id="share">Send this quiz to a friend</button><button class="button ghost" type="button" id="replay">Play again</button></div>
+<p id="share-status" role="status" class="status"></p><input id="share-url" class="daily-share-url" type="url" aria-label="Copy this challenge link" readonly hidden>
+<div class="daily-sources"><a href="../guess-korea/?region=all">Try the landmark photo quiz</a><a href="../travel/">Explore the travel guides</a></div>
+</section>
+<p class="credit daily-note">A new mix from our question bank appears at midnight in Korea (KST). No account needed. Your best daily scores and streak are saved only in this browser when storage is available.</p>
+</main><footer class="narrow foot"><a href="../">English home</a><a href="/" lang="ko">한국어 홈</a></footer>
+</body></html>
