@@ -14,6 +14,15 @@
   main>.hero .button{width:100%;text-align:center;justify-content:center}
   main>.hero .lede{line-height:1.5}
 }
+@media(min-width:641px) and (max-width:899px){
+  main>.hero .button{width:100%;text-align:center;justify-content:center}
+}
+/* Desktop: keep the hero inside the first screen and balance the traditions grid. */
+@media(min-width:900px){
+  main>.hero h1{font-size:clamp(2.5rem,4.2vw,3.6rem)}
+  main>.hero-copy{padding:clamp(28px,4vw,52px)}
+  #traditions .guide-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
@@ -29,7 +38,7 @@
 </div>
 <p class="credit">Route photos: <a href="https://commons.wikimedia.org/wiki/File:Donggung_Palace_01.jpg">Gyeongju, Bernard Gagnon</a>; <a href="https://commons.wikimedia.org/wiki/File:Gwanghwamun_Close_Up_of_Roof_and_Title.jpg">Seoul, Huntsmanleader</a>; <a href="https://commons.wikimedia.org/wiki/File:Gamcheon_Culture_Village.jpg">Busan, Bernard Gagnon</a>. <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.</p>
 </section>
-<section class="route-section" aria-labelledby="culture"><div class="route-title"><h2 id="culture">Get to know Korean traditions</h2><span class="subdued">Read and try</span></div>
+<section class="route-section" id="traditions" aria-labelledby="culture"><div class="route-title"><h2 id="culture">Get to know Korean traditions</h2><span class="subdued">Read and try</span></div>
 <div class="guide-list">
 <a class="guide" href="./saju/"><strong>What is Saju?</strong><small>Explore Korea’s Four Pillars tradition and open two example charts.</small></a>
 <a class="guide" href="./dreams/"><strong>Dream Guides</strong><small>Five guides, from teeth falling out to the lucky pig in Korean folklore.</small></a>
